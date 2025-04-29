@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet PuissanceChat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>🎮 Projet PuissanceChat en Java</h1>
+        <p>Plateforme en ligne sur laquelle des joueurs peuvent jouer à des jeux de plateau classiques !
+
+            PuissanceChat est un jeu codé sur Java 17. Composé d’un côté client et d’un côté serveur, il peut être joué uniquement en ligne et propose un jeu Puissance 4 avec un chat permettant de communiquer avec l'adversaire. De plus nous avons développer une interface graphique permettant ainsi d'avoir un visuel sur son jeu
+            
+            PuissanceChat a été développé comme projet répondant aux consignes de la SAÉ 2.03, travail effectué au sein de l’IUT du Havre pour notre formation BUT informatique.
+            
+            Ce site web rend compte du travail effectué quant à la réalisation du projet, mais explique également comment installer soi-même PuissanceChat et comment il fonctionne.</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <section>
+        <h2> Equipe n°10 | SAE 2.03 </h2>
+        <p>Développeurs : <strong>Youssif Bassam</strong>, <strong>Yassine El Maaddi </strong>, <strong>Tommy Tran </strong>, <strong>Keryann Le Besque</strong></p>
+    </section>
+
+    <section>
+        <h2>Objectif du projet</h2>
+        <p>Créer une version du jeu <strong>Puissance 4</strong> jouable à deux joueurs à distance en Java :</p>
+        <ul>
+            <li>Communication <strong>TCP</strong> entre client et serveur</li>
+            <li>Logique centralisée côté <strong>serveur et client</strong></li>
+            <li>Développement d'une <strong>application</strong></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2> Structure du projet</h2>
+        <ul>
+            <li><code>ClientPuissance4IHM.java</code> – Interface graphique du client</li>
+            <li><code>ServeurPuissance4IHM.java</code> – Logique côté serveur</li>
+            <li><code>start.sh</code> – Script de lancement</li>
+            <li><code>Dockerfile</code> – Exécution du projet avec Docker</li>
+        </ul>
+    </section>
+
+   <section>
+    <h2>Table des matières</h2>
+    <p>Accédez rapidement aux différentes explications :</p>
+    <ul>
+        <li>🔧 <a href="./explication_installation.html">Installation du projet</a></li>
+        <li>🖥️ <a href="./explication_java.html">Fonctionnement du code Java</a></li>
+        <li>🐳 <a href="./explication_dockerfile.html">Structure du Dockerfile</a></li>
+    </ul>
+   </section>
+    
+    
+   
+    
+
+
+    <section>
+        <h2> Fonctionnement du client</h2>
+        <p>Affichage de l’interface avec :</p>
+        <ul>
+            <li>Boutons pour jouer une pièce</li>
+            <li>Grille 6×7 en temps réel</li>
+            <li>Indication du tour ou du gagnant</li>
+        </ul>
+        
+    </section>
+
+    <section>
+        <h2> Fonctionnement du serveur</h2>
+        <ol>
+            <li>Attente de deux connexions</li>
+            <li>Attribution des rôles</li>
+            <li>Traitement des tours</li>
+            <li>Vérification de victoire</li>
+            <li>Envoi des mises à jour</li>
+        </ol>
+    </section>
+
+
+    <section>
+        <h2> Bilan</h2>
+        <p>Ce projet avait pour objectif de développer un jeu de Puissance 4 multijoueur jouable en réseau local, avec une interface graphique réalisée en Java (Swing). Il met en œuvre des communications client-serveur via des sockets TCP, et propose une solution dockerisée pour simplifier le déploiement.
+
+            <br> <br>Le fonctionnement repose sur deux programmes :
+            
+            <li>Le serveur, qui gère les connexions, synchronise les tours de jeu, met à jour l'état de la grille, et vérifie les conditions de victoire.</li>
+            
+            <li>Le client, qui affiche l’interface de jeu, permet au joueur de choisir une colonne pour jouer, et communique en temps réel avec le serveur.</li>
+            
+            <br>Le projet nous a permis de mobiliser des compétences en : 
+            
+            <li>Programmation orientée objet (Java),</li>
+            
+            <li>Interfaces graphiques (Swing),</li>
+            
+            <li>Réseaux (Sockets) pour les échanges en temps réel,</li>
+            
+            <li>Conteneurisation (Docker) pour l’environnement d’exécution.</li>
+            
+            <br>Ce projet nous a donné une vision concrète du fonctionnement d’un jeu en réseau, tout en nous entraînant à structurer un code propre, réutilisable, et à collaborer dans un cadre technique réaliste..</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 - Projet équipe 10 Java - PuissanceChat</p>
+</footer>
+
+</body>
+</html>
