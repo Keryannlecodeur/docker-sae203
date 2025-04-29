@@ -33,7 +33,7 @@ Le serveur devrait désormais être démarré
 
 
 
-#Côté Client 
+# Côté Client 
 
 ###  Le client doit également cloner le dépôt puis ensuite il doit :
 
