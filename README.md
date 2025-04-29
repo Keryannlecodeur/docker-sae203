@@ -5,7 +5,7 @@ sur le même réseau ou sur le même PC si besoin.
 
 ## Installation du jeu
 
-Côté Serveur
+# Côté Serveur
 
 - Premièrement il faut cloner ce dépôt afin de récupérer tous les fichiers nécessaires
 
