@@ -3,6 +3,13 @@
 Ce dépôt contient une application pouvant se jouer à plusieurs personnes étant 
 sur le même réseau ou sur le même PC si besoin.
 
+# Prérequis
+
+- Avoir git installé sur sa machine
+
+- Avoir docker installé sur sa machine
+
+
 ## Installation du jeu
 
 # Côté Serveur
