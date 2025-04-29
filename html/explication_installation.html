@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Installation de PuissanceChat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>⚙️ Installation du Jeu PuissanceChat</h1>
+  </header>
+
+  <main class="container">
+
+    <section id="prerequis">
+      <h2>🔧 Prérequis</h2>
+      <p>Avant de commencer, assurez-vous que les outils suivants sont installés sur votre machine :</p>
+      <ul>
+        <li><strong>Git</strong> — Pour cloner le dépôt depuis GitHub</li>
+        <li><strong>Docker</strong> — Pour créer et exécuter des conteneurs</li>
+      </ul>
+    </section>
+
+    <section id="serveur">
+      <h2>🖥️ Installation — Côté Serveur</h2>
+      <ol>
+        <li>
+          <strong>Cloner le dépôt :</strong><br />
+          <code>git clone git@github.com:Keryannlecodeur/docker-sae203.git</code>
+        </li>
+        <li>
+          <strong>Accéder au dossier :</strong><br />
+          <code>cd docker-sae203</code>
+        </li>
+        <li>
+          <strong>Convertir le script si nécessaire :</strong><br />
+          <code>dos2unix start.sh</code>
+        </li>
+        <li>
+          <strong>Créer l’image Docker :</strong><br />
+          <code>docker build -t &lt;nom_conteneur&gt; .</code>
+        </li>
+        <li>
+          <strong>Lancer le serveur :</strong><br />
+          <code>docker run -it -p 8080:8080 &lt;nom_conteneur&gt;</code><br />
+          Le serveur sera accessible sur le port <code>8080</code>.
+        </li>
+      </ol>
+    </section>
+
+    <section id="client">
+      <h2>👤 Installation — Côté Client</h2>
+      <ol>
+        <li>
+          <strong>Cloner le dépôt :</strong><br />
+          <code>git clone git@github.com:Keryannlecodeur/docker-sae203.git</code>
+        </li>
+        <li>
+          <strong>Compiler le client Java :</strong><br />
+          <code>javac ClientPuissance4IHM.java</code>
+        </li>
+        <li>
+          <strong>Lancer le client :</strong><br />
+          <code>java ClientPuissance4IHM</code>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Guide d'installation du projet PuissanceChat</p>
+  </footer>
+</body>
+</html>
