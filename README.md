@@ -20,7 +20,7 @@ git clone git@github.com:Keryannlecodeur/docker-sae203.git
 - On créée le conteneur docker :
 
 ```
-git build -t <nom_conteneur> .
+docker build -t <nom_conteneur> .
 ```
 
 On remplace le <nom_conteneur> par la nom voulu
