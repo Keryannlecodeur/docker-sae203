@@ -26,7 +26,7 @@ docker build -t <nom_conteneur> .
 On remplace le <nom_conteneur> par la nom voulu
 
 ```
-docker run -it -p 8080:8080 puissance4 
+docker run -it -p 8080:8080 <nom_conteneur> 
 ```
 
 Le serveur devrait désormais être démarré
