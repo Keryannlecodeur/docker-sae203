@@ -3,7 +3,8 @@ import java.awt.*;
 import java.io.*;
 import java.net.*;
 
-public class ClientPuissance4IHM {
+public class ClientPuissance4IHM 
+{
     private JFrame frame;
     private JPanel gridPanel;
     private JLabel infoLabel;
@@ -14,11 +15,13 @@ public class ClientPuissance4IHM {
     private int currentTurn = 1;
     private boolean gameEnded = false;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         new ClientPuissance4IHM();
     }
 
-    public ClientPuissance4IHM() {
+    public ClientPuissance4IHM() 
+    {
         frame = new JFrame("Client Puissance 4");
         frame.setLayout(new BorderLayout());
 
@@ -33,7 +36,8 @@ public class ClientPuissance4IHM {
             buttons[i].setFont(new Font("Arial", Font.BOLD, 24));
             buttons[i].setBackground(Color.CYAN);
             buttons[i].addActionListener(e -> {
-                if (currentTurn == myPlayerNumber && !gameEnded) {
+                if (currentTurn == myPlayerNumber && !gameEnded) 
+                {
                     out.println(col);
                 }
             });
@@ -54,7 +58,8 @@ public class ClientPuissance4IHM {
         connectToServer();
     }
 
-    private void connectToServer() {
+    private void connectToServer() 
+    {
         try {
             String serverIP = JOptionPane.showInputDialog("Entrez l'adresse IP du serveur :");
             Socket socket = new Socket(serverIP, 8080);
@@ -64,29 +69,45 @@ public class ClientPuissance4IHM {
             out = new PrintWriter(socket.getOutputStream(), true);
 
             new Thread(() -> {
-                try {
+                try 
+                {
                     String line;
-                    while ((line = in.readLine()) != null) {
-                        if (line.startsWith("PLAYER:")) {
+                    while ((line = in.readLine()) != null) 
+                    {
+                        if (line.startsWith("PLAYER:")) 
+                        {
                             myPlayerNumber = Integer.parseInt(line.substring(7));
                             SwingUtilities.invokeLater(() -> {
                                 frame.setTitle("Puissance 4 - Joueur " + myPlayerNumber);
                                 infoLabel.setText("En attente de démarrage...");
                             });
-                        } else if (line.startsWith("START")) {
+                        } 
+                        else if (line.startsWith("START")) 
+                        {
                             SwingUtilities.invokeLater(() -> infoLabel.setText("Partie démarrée"));
-                        } else if (line.startsWith("TURN:")) {
+                        }
+                        
+                        else if (line.startsWith("TURN:"))
+                        {
                             currentTurn = Integer.parseInt(line.substring(5));
                             updateInfoLabel();
-                        } else if (line.startsWith("VICTORY:")) {
+                        } 
+                        else if (line.startsWith("VICTORY:")) 
+                        {
                             int winner = Integer.parseInt(line.substring(8));
                             gameEnded = true;
-                            if (winner == myPlayerNumber) {
+                            if (winner == myPlayerNumber) 
+                            {
                                 SwingUtilities.invokeLater(() -> infoLabel.setText("🎉 Tu as gagné !"));
-                            } else {
+                            } 
+                            
+                            else 
+                            {
                                 SwingUtilities.invokeLater(() -> infoLabel.setText("Dommage, tu as perdu."));
                             }
-                        } else if (line.startsWith("GRID:")) {
+                        } 
+                        else if (line.startsWith("GRID:"))
+                        {
                             updateGrid(line.substring(5));
                         }
                         SwingUtilities.invokeLater(this::refreshDisplay);
@@ -95,33 +116,44 @@ public class ClientPuissance4IHM {
                     e.printStackTrace();
                 }
             }).start();
-        } catch (IOException e) {
+        } 
+        catch (IOException e) 
+        {
             JOptionPane.showMessageDialog(frame, "Erreur de connexion au serveur !");
             frame.dispose();
         }
     }
 
-    private void updateGrid(String data) {
+    private void updateGrid(String data) 
+    {
         String[] cells = data.split(",");
         int index = 0;
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 7; j++) {
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 7; j++) 
+            {
                 grid[i][j] = Integer.parseInt(cells[index++]);
             }
         }
     }
 
-    private void refreshDisplay() {
+    private void refreshDisplay()
+    {
         gridPanel.removeAll();
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 7; j++) {
+        for (int i = 0; i < 6; i++) 
+        {
+            for (int j = 0; j < 7; j++) 
+            {
                 JPanel cell = new JPanel();
                 cell.setPreferredSize(new Dimension(60, 60));
                 cell.setBackground(Color.BLUE);
                 cell.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-                if (grid[i][j] == 1) {
+                if (grid[i][j] == 1) 
+                {
                     cell.add(createCircle(Color.RED));
-                } else if (grid[i][j] == 2) {
+                } 
+                else if (grid[i][j] == 2) 
+                {
                     cell.add(createCircle(Color.YELLOW));
                 }
                 gridPanel.add(cell);
@@ -131,7 +163,8 @@ public class ClientPuissance4IHM {
         gridPanel.repaint();
     }
 
-    private JLabel createCircle(Color color) {
+    private JLabel createCircle(Color color) 
+    {
         JLabel label = new JLabel();
         label.setOpaque(true);
         label.setBackground(color);
@@ -140,11 +173,16 @@ public class ClientPuissance4IHM {
         return label;
     }
 
-    private void updateInfoLabel() {
+    private void updateInfoLabel() 
+    {
         if (gameEnded) return;
-        if (currentTurn == myPlayerNumber) {
+        if (currentTurn == myPlayerNumber) 
+        {
             infoLabel.setText("À toi de jouer !");
-        } else {
+        } 
+        
+        else 
+        {
             infoLabel.setText("Tour de l'adversaire...");
         }
     }
