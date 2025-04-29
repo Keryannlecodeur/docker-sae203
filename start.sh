@@ -7,10 +7,10 @@ read -p "Entrer 1 ou 2 : " choix
 
 if [ "$choix" = "1" ]; then
     echo "Lancement du serveur..."
-    java ServeurPuissance4
+    java ServeurPuissance4IHM
 elif [ "$choix" = "2" ]; then
     echo "Lancement du client..."
-    java ClientPuissance4
+    java ClientPuissance4IHM
 else
     echo "Choix invalide."
     exit 1

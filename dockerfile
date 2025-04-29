@@ -6,6 +6,6 @@ COPY *.java .
 COPY start.sh .
 RUN chmod +x start.sh
 
-RUN javac ServeurPuissance4.java ClientPuissance4.java
+RUN javac ServeurPuissance4IHM.java ClientPuissance4IHM.java
 
 CMD ["./start.sh"]
