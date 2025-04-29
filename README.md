@@ -1,4 +1,4 @@
-# Puissance 4 avec chat
+# 🎲 Puissance 4 avec chat
 
 Ce dépôt contient une application pouvant se jouer à plusieurs personnes étant 
 sur le même réseau ou sur le même PC si besoin.
