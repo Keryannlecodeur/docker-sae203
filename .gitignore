@@ -1,0 +1,23 @@
+# Fichiers compilés Java
+*.class
+
+# Fichiers log
+*.log
+
+# Dossiers de build courants
+bin/
+build/
+out/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
