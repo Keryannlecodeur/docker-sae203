@@ -3,7 +3,7 @@
 Ce dépôt contient une application pouvant se jouer à plusieurs personnes étant 
 sur le même réseau ou sur le même PC si besoin.
 
-[https://keryannlecodeur.github.io/docker-sae203/](Cliquez ici pour allez sur le site de présentation du site)
+[Cliquez ici pour allez sur le site de présentation du site](https://keryannlecodeur.github.io/docker-sae203/)
 
 # Prérequis
 
