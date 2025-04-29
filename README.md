@@ -16,6 +16,12 @@ git clone git@github.com:Keryannlecodeur/docker-sae203.git
 
 - Ensuite il suffit de se placer dans le répertoire avec la commande cd
 
+- Pour éviter des problèmes pour le fichier start.sh ouvrir git bash et se rendre dans le bon dossier en suite faire: 
+
+```
+dos2unix start.sh
+```
+
 
 - On créée le conteneur docker :
 
