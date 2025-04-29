@@ -1,7 +1,11 @@
-FROM openjdk:21-slim
+FROM openjdk:17
+
 WORKDIR /app
-COPY testjava /app/testjava
-WORKDIR /app/testjava
-RUN javac Server.java
-EXPOSE 8080
-CMD ["java", "Server"]
+
+COPY *.java .
+COPY start.sh .
+RUN chmod +x start.sh
+
+RUN javac ServeurPuissance4.java ClientPuissance4.java
+
+CMD ["./start.sh"]
