@@ -293,7 +293,7 @@ public class ClientPuissance4IHM {
 		chatEnvoyerButton.addActionListener(e -> {
 			String msg = chatInput.getText().trim();
 			if (!msg.isEmpty()) {
-				out.println("CHAT:" + msg); // ✅ sans pseudo répété
+				out.println("CHAT:" + msg); // sans pseudo répété
 				chatInput.setText("");
 			}
 		});
