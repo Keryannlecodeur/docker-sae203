@@ -4,17 +4,40 @@
   <meta charset="UTF-8" />
   <title>Explication du Dockerfile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <main class="container">
 
     <header>
-      <h1>📦 Déploiement Docker du Jeu Puissance 4</h1>
+      <h1>📦 Déploiement Docker du Jeu PuissanceChat</h1>
       
     </header>
-
+    <section id="script">
+    <h1>Docker</h1>
+    <p><strong>Docker</strong>, ou plus précisément <strong>Docker</strong> (sans article), est une <em>plateforme logicielle</em> qui permet de <strong>créer, déployer et exécuter des applications</strong> dans des <strong>conteneurs</strong>.</p>
+    </section>
+    
+    <section id="script">
+      <h2>🔹 C'est quoi un conteneur ?</h2>
+      <p>Un <strong>conteneur</strong> est comme une boîte légère et portable qui contient tout ce dont une application a besoin pour fonctionner :</p>
+      <ul>
+        <li>Le code de l'application</li>
+        <li>Ses bibliothèques</li>
+        <li>Ses dépendances</li>
+        <li>Son environnement d'exécution</li>
+      </ul>
+      <p>C’est un peu comme une <strong>machine virtuelle</strong>, mais plus <strong>légère, rapide et efficace</strong>. Contrairement aux machines virtuelles, les conteneurs utilisent le <strong>noyau du système d’exploitation hôte</strong>, ce qui les rend moins gourmands en ressources.</p>
+    
+      <h2>🔹 À quoi sert Docker ?</h2>
+      <p>Docker est utilisé pour :</p>
+      <ul>
+        <li><strong>Standardiser les environnements de développement</strong> (ton appli marche partout pareil).</li>
+        <li><strong>Faciliter le déploiement d'applications</strong> (surtout en production ou sur le cloud).</li>
+        <li><strong>Gérer plusieurs services avec Docker Compose</strong> (comme une base de données + une API + une interface).</li>
+      </ul>
+    </section>
     <section id="script">
       <h2>📝 Script Bash : <code>start.sh</code></h2>
       <p>Ce script Bash permet de lancer soit le serveur, soit le client du jeu Puissance 4 :</p>
@@ -29,23 +52,23 @@
 
       <h3>💻 Code du script</h3>
       <pre><code class="language-bash">
-#!/bin/bash
+          #!/bin/bash
 
-echo "Choisissez un mode :"
-echo "1 - Serveur"
-echo "2 - Client"
-read -p "Entrer 1 ou 2 : " choix
+          echo "Choisissez un mode :"
+          echo "1 - Serveur"
+          echo "2 - Client"
+          read -p "Entrer 1 ou 2 : " choix
 
-if [ "$choix" = "1" ]; then
-    echo "Lancement du serveur..."
-    java ServeurPuissance4IHM
-elif [ "$choix" = "2" ]; then
-    echo "Lancement du client..."
-    java ClientPuissance4IHM
-else
-    echo "Choix invalide."
-    exit 1
-fi
+          if [ "$choix" = "1" ]; then
+              echo "Lancement du serveur..."
+              java ServeurPuissance4IHM
+          elif [ "$choix" = "2" ]; then
+              echo "Lancement du client..."
+              java ClientPuissance4IHM
+          else
+              echo "Choix invalide."
+              exit 1
+          fi
       </code></pre>
     </section>
 
